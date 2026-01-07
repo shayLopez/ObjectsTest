@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ObjectsTest">
         <activity
+            android:name=".Test"
+            android:exported="false" />
+        <activity
             android:name=".Intake"
             android:exported="false" />
         <activity
