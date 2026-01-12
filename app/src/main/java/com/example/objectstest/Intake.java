@@ -16,8 +16,11 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class Intake extends AppCompatActivity {
     Switch areaordiam;
+    int button;
     Button next;
     Intent go;
+    RadioGroup group;
+    boolean diam=false;
 
 RadioButton B1,B2,B3,B4;
 
@@ -35,6 +38,31 @@ RadioButton B1,B2,B3,B4;
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (group.getCheckedRadioButtonId()==B1.getId())
+                    button=1;
+                else if (group.getCheckedRadioButtonId()==B2.getId())
+                    button=2;
+                else if (group.getCheckedRadioButtonId()==B3.getId())
+                    button=3;
+                else if (group.getCheckedRadioButtonId()==B4.getId())
+                    button=4;
+
+
+
+
+go.putExtra("chosen",button);
+go.putExtra("diam",diam);
+startActivity(go);
+            }
+        });
+        areaordiam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (areaordiam.isChecked())
+                    diam=true;
+                else
+                    diam=false;
+
 
             }
         });
@@ -42,6 +70,7 @@ RadioButton B1,B2,B3,B4;
 
     public  void intitcomp()
     {
+        group=findViewById(R.id.group);
         B1=findViewById(R.id.radioButton);
         B2=findViewById(R.id.radioButton2);
         B3=findViewById(R.id.radioButton3);
