@@ -35,6 +35,8 @@ public class Test extends AppCompatActivity {
         }
 
     }
+    public void firstOpt()
+    {}
     public void initcomp()
     {
         recieve=getIntent();
