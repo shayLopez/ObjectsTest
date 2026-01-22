@@ -37,6 +37,7 @@ public class Test extends AppCompatActivity {
         wrongcounter = 0;
         if (shape == 1)
             firstOpt();
+
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -118,8 +119,37 @@ public class Test extends AppCompatActivity {
         }
     }
 
-    //public void secOpt()
-    //{}
+    public void secOpt()
+    {   int ranB;
+        String rightans="";
+        double areaordiam;
+        double base=(Math.random() * 10) + 1;
+        double hight=(Math.random() * 10) + 1;
+        double fakeanswer1,fakeasnwer2;
+        if (diameter)
+        {
+            hight = Math.sqrt(base * base + hight * hight);
+            areaordiam=(hight*2+base);
+            fakeanswer1=(Math.random() * 28) + 3;
+            fakeasnwer2=(Math.random() * 28) + 3;
+            while (fakeanswer1==areaordiam)
+                fakeanswer1=(Math.random() * 28) + 3;
+            while (fakeasnwer2==areaordiam)
+                fakeasnwer2=(Math.random() * 28) + 3;
+
+        }
+        else
+        {
+            rightans = String.valueOf((base * hight) / 2);
+        }
+
+        if (diameter)
+            info.setText("base: "+base+" rib: "+hight);
+        else
+            info.setText("base: "+base+" hight: "+hight);
+        ranB=(int) (Math.random()*3);
+
+    }
 
     public void initcomp()
     {
