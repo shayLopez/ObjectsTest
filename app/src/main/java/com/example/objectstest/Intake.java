@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -38,6 +39,13 @@ RadioButton B1,B2,B3,B4;
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int selectedId = group.getCheckedRadioButtonId();
+
+                if (selectedId == -1) {
+                    // לא נבחרה אופציה
+                    Toast.makeText(Intake.this,"please select", Toast.LENGTH_SHORT).show();
+                }
+                else {
                 if (group.getCheckedRadioButtonId()==B1.getId())
                     button=1;
                 else if (group.getCheckedRadioButtonId()==B2.getId())
@@ -53,7 +61,7 @@ RadioButton B1,B2,B3,B4;
 go.putExtra("chosen",button);
 go.putExtra("diam",diam);
 startActivity(go);
-            }
+            }}
         });
         areaordiam.setOnClickListener(new View.OnClickListener() {
             @Override
