@@ -20,7 +20,7 @@ public class Test extends AppCompatActivity {
     Button b1, b2, b3;
     String rightAns = "";
 
-
+;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
