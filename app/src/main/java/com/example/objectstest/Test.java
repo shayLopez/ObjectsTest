@@ -39,7 +39,7 @@ public class Test extends AppCompatActivity {
         {
             firstOpt();
             if (diameter)
-            Tvshape.setText("Diameter of a square");
+            Tvshape.setText("Perimeter of a square");
             else
                 Tvshape.setText("Area of a Square");
         }
@@ -47,7 +47,7 @@ public class Test extends AppCompatActivity {
         {
             secOpt();
             if (diameter)
-                Tvshape.setText("Diameter of a Triangular");
+                Tvshape.setText("Perimeter of a Triangular");
             else
                 Tvshape.setText("Area of a Triangular");
         }
@@ -55,9 +55,17 @@ public class Test extends AppCompatActivity {
         {
             thiOpt();
             if (diameter)
-                Tvshape.setText("Diameter of  acircle");
+                Tvshape.setText("Perimeter of  a circle");
             else
                 Tvshape.setText("Area of a circle");
+        }
+        else
+        {
+            foOpt();
+        if (diameter)
+        Tvshape.setText("Perimeter of trapezium");
+        else
+        Tvshape.setText("Area of Trapezium");
         }
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +80,8 @@ public class Test extends AppCompatActivity {
                 secOpt();
                 else if (shape==3)
                     thiOpt();
+                else
+                    foOpt();
 
 
             }
@@ -90,6 +100,8 @@ public class Test extends AppCompatActivity {
                     secOpt();
                 else if (shape==3)
                     thiOpt();
+                else
+                    foOpt();
             }
         });
         b3.setOnClickListener(new View.OnClickListener() {
@@ -107,6 +119,8 @@ public class Test extends AppCompatActivity {
                     secOpt();
                 else if (shape==3)
                     thiOpt();
+                else
+                    foOpt();
             }
         });
 
@@ -258,6 +272,65 @@ public class Test extends AppCompatActivity {
             b3.setText(String.valueOf(areaOrDiam));
         }
         info.setText("Radius: "+radius);
+    }
+    public void foOpt()
+    {
+        int ranB;
+        String rightAns="";
+        double baseDown=(int)(Math.random()*10)+1;
+        double baseUp=(int)(Math.random()*10)+1;
+        while (baseUp==baseDown)
+            baseUp=(int)(Math.random()*10)+1;
+        double hight=(int)(Math.random()*10)+1;
+        double areaOrDiam;
+        double fakeAns1,fakeAns2;
+        if (diameter)
+        {
+            areaOrDiam=hight*2+baseDown+baseUp;
+            fakeAns1=(int)(Math.random()* 39)+1;
+            fakeAns2=(int)(Math.random()* 39)+1;
+            while (fakeAns1==fakeAns2||fakeAns1==areaOrDiam||fakeAns2==areaOrDiam)
+            {
+                fakeAns1=(int)(Math.random()* 39)+1;
+                fakeAns2=(int)(Math.random()* 39)+1;
+            }
+        }
+        else
+        {
+            areaOrDiam=((baseUp+baseDown)*hight)/2;
+            fakeAns1=((((int)(Math.random()*10)+1)+((int)(Math.random()*9)+1))*((int)(Math.random()*10)+1))/2;
+             fakeAns2=((((int)(Math.random()*10)+1)+((int)(Math.random()*9)+1))*((int)(Math.random()*10)+1))/2;
+             while (fakeAns1==fakeAns2||fakeAns1==areaOrDiam||fakeAns2==areaOrDiam)
+             {
+                 fakeAns1=((((int)(Math.random()*10)+1)+((int)(Math.random()*9)+1))*((int)(Math.random()*10)+1))/2;
+                 fakeAns2=((((int)(Math.random()*10)+1)+((int)(Math.random()*9)+1))*((int)(Math.random()*10)+1))/2;
+             }
+        }
+        ranB=(int) (Math.random()*3);
+        if (ranB==0)
+        {
+            b1.setText(String.valueOf(areaOrDiam));
+            b2.setText(String.valueOf(fakeAns1));
+            b3.setText(String.valueOf(fakeAns2));
+        }
+        else if (ranB==1)
+        {
+            b1.setText(String.valueOf(fakeAns1));
+            b2.setText(String.valueOf(areaOrDiam));
+            b3.setText(String.valueOf(fakeAns2));
+        }
+        else if (ranB==2)
+        {
+            b1.setText(String.valueOf(fakeAns1));
+            b2.setText(String.valueOf(fakeAns2));
+            b3.setText(String.valueOf(areaOrDiam));
+        }
+        if (diameter)
+            info.setText("Ribs: "+hight+" lower base: "+baseDown+" higher base: "+baseUp);
+        else
+            info.setText("Height:"+hight+" lower base: "+baseDown+" higher base: "+baseUp);
+
+
     }
 
     public void initcomp()
