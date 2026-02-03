@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -19,8 +20,9 @@ public class Test extends AppCompatActivity {
     TextView info,Tvshape;
     Button b1, b2, b3;
     String rightAns = "";
+    ImageView shapeIlu;
 
-;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,9 +65,13 @@ public class Test extends AppCompatActivity {
         {
             foOpt();
         if (diameter)
-        Tvshape.setText("Perimeter of trapezium");
+        {
+            Tvshape.setText("Perimeter of trapezium");
+        }
         else
-        Tvshape.setText("Area of Trapezium");
+        {
+            Tvshape.setText("Area of Trapezium");
+        }
         }
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -152,7 +158,8 @@ public class Test extends AppCompatActivity {
         }
         rightAns = "" + areaOrDiam;
         ranB = (int) (Math.random() * 3);
-        info.setText("hight: " + hight + "  base: " + base);
+
+
         if (ranB == 0) {
             b1.setText(String.valueOf(areaOrDiam));
             b2.setText(String.valueOf(fakeanswear1));
@@ -166,6 +173,23 @@ public class Test extends AppCompatActivity {
             b2.setText(String.valueOf(fakeanswear2));
             b3.setText(String.valueOf(areaOrDiam));
         }
+        if (hight == base)
+        {
+            shapeIlu.setImageResource(R.drawable.square);
+        info.setText("A= " + hight);
+    }
+        else if (hight>base)
+        {
+        shapeIlu.setImageResource(R.drawable.rectangle);
+            info.setText("A= " + base + "  B= " + hight);
+        }
+        else
+        {
+            shapeIlu.setImageResource(R.drawable.rectangle2);
+            info.setText("A= " + base + "  B= " + hight);
+
+        }
+
     }
 
     public void secOpt()
@@ -200,10 +224,37 @@ public class Test extends AppCompatActivity {
                 fakeasnwer2=(int)(Math.random() * 50) + 1;
         }
 
-        if (diameter)
-            info.setText("base: "+base+" rib: "+hight);
+        if (diameter) {
+            if (base==hight)
+            {
+                shapeIlu.setImageResource(R.drawable.triangle1peri);
+                info.setText("A= " + base );
+            }
+            else if (base>hight)
+            {
+            shapeIlu.setImageResource(R.drawable.longtriangle);
+                info.setText("A= " + base + " B= " + hight);
+            }
+            else {
+                shapeIlu.setImageResource(R.drawable.triangle2peri);
+                info.setText("A= " + base + " B= " + hight);
+            }
+
+        }
         else
-            info.setText("base: "+base+" hight: "+hight);
+        {
+            if (base==hight)
+                shapeIlu.setImageResource(R.drawable.triangle1);
+
+            else if (base>hight)
+            shapeIlu.setImageResource(R.drawable.longtriangle2);
+
+            else
+                shapeIlu.setImageResource(R.drawable.triangle2);
+
+            info.setText("A= " + base + " B= " + hight);
+        }
+
         ranB=(int) (Math.random()*3);
        if (ranB==0)
        {
@@ -223,6 +274,7 @@ public class Test extends AppCompatActivity {
            b2.setText(String.valueOf(fakeasnwer2));
            b3.setText(String.valueOf(areaordiam));
        }
+
     }
     public void thiOpt()
     {
@@ -271,67 +323,68 @@ public class Test extends AppCompatActivity {
             b2.setText(String.valueOf(fakeAns2));
             b3.setText(String.valueOf(areaOrDiam));
         }
-        info.setText("Radius: "+radius);
+        info.setText("R = "+radius);
+        shapeIlu.setImageResource(R.drawable.circle);
     }
-    public void foOpt()
-    {
+    public void foOpt() {
         int ranB;
-        String rightAns="";
-        double baseDown=(int)(Math.random()*10)+1;
-        double baseUp=(int)(Math.random()*10)+1;
-        while (baseUp==baseDown)
-            baseUp=(int)(Math.random()*10)+1;
-        double hight=(int)(Math.random()*10)+1;
+        String rightAns = "";
+        double baseDown = (int) (Math.random() * 10) + 1;
+        double baseUp = (int) (Math.random() * 10) + 1;
+        while (baseUp == baseDown)
+            baseUp = (int) (Math.random() * 10) + 1;
+        double hight = (int) (Math.random() * 10) + 1;
         double areaOrDiam;
-        double fakeAns1,fakeAns2;
-        if (diameter)
-        {
-            areaOrDiam=hight*2+baseDown+baseUp;
-            fakeAns1=(int)(Math.random()* 39)+1;
-            fakeAns2=(int)(Math.random()* 39)+1;
-            while (fakeAns1==fakeAns2||fakeAns1==areaOrDiam||fakeAns2==areaOrDiam)
-            {
-                fakeAns1=(int)(Math.random()* 39)+1;
-                fakeAns2=(int)(Math.random()* 39)+1;
+        double fakeAns1, fakeAns2;
+        if (diameter) {
+            areaOrDiam = hight * 2 + baseDown + baseUp;
+            fakeAns1 = (int) (Math.random() * 39) + 1;
+            fakeAns2 = (int) (Math.random() * 39) + 1;
+            while (fakeAns1 == fakeAns2 || fakeAns1 == areaOrDiam || fakeAns2 == areaOrDiam) {
+                fakeAns1 = (int) (Math.random() * 39) + 1;
+                fakeAns2 = (int) (Math.random() * 39) + 1;
+            }
+        } else {
+            areaOrDiam = ((baseUp + baseDown) * hight) / 2;
+            fakeAns1 = ((((int) (Math.random() * 10) + 1) + ((int) (Math.random() * 9) + 1)) * ((int) (Math.random() * 10) + 1)) / 2;
+            fakeAns2 = ((((int) (Math.random() * 10) + 1) + ((int) (Math.random() * 9) + 1)) * ((int) (Math.random() * 10) + 1)) / 2;
+            while (fakeAns1 == fakeAns2 || fakeAns1 == areaOrDiam || fakeAns2 == areaOrDiam) {
+                fakeAns1 = ((((int) (Math.random() * 10) + 1) + ((int) (Math.random() * 9) + 1)) * ((int) (Math.random() * 10) + 1)) / 2;
+                fakeAns2 = ((((int) (Math.random() * 10) + 1) + ((int) (Math.random() * 9) + 1)) * ((int) (Math.random() * 10) + 1)) / 2;
             }
         }
-        else
-        {
-            areaOrDiam=((baseUp+baseDown)*hight)/2;
-            fakeAns1=((((int)(Math.random()*10)+1)+((int)(Math.random()*9)+1))*((int)(Math.random()*10)+1))/2;
-             fakeAns2=((((int)(Math.random()*10)+1)+((int)(Math.random()*9)+1))*((int)(Math.random()*10)+1))/2;
-             while (fakeAns1==fakeAns2||fakeAns1==areaOrDiam||fakeAns2==areaOrDiam)
-             {
-                 fakeAns1=((((int)(Math.random()*10)+1)+((int)(Math.random()*9)+1))*((int)(Math.random()*10)+1))/2;
-                 fakeAns2=((((int)(Math.random()*10)+1)+((int)(Math.random()*9)+1))*((int)(Math.random()*10)+1))/2;
-             }
-        }
-        ranB=(int) (Math.random()*3);
-        if (ranB==0)
-        {
+        ranB = (int) (Math.random() * 3);
+        if (ranB == 0) {
             b1.setText(String.valueOf(areaOrDiam));
             b2.setText(String.valueOf(fakeAns1));
             b3.setText(String.valueOf(fakeAns2));
-        }
-        else if (ranB==1)
-        {
+        } else if (ranB == 1) {
             b1.setText(String.valueOf(fakeAns1));
             b2.setText(String.valueOf(areaOrDiam));
             b3.setText(String.valueOf(fakeAns2));
-        }
-        else if (ranB==2)
-        {
+        } else if (ranB == 2) {
             b1.setText(String.valueOf(fakeAns1));
             b2.setText(String.valueOf(fakeAns2));
             b3.setText(String.valueOf(areaOrDiam));
         }
         if (diameter)
-            info.setText("Ribs: "+hight+" lower base: "+baseDown+" higher base: "+baseUp);
+        {
+        if (baseDown>baseUp)
+            shapeIlu.setImageResource(R.drawable.trapeziumperi);
         else
-            info.setText("Height:"+hight+" lower base: "+baseDown+" higher base: "+baseUp);
-
+            shapeIlu.setImageResource(R.drawable.trapezium2per);
+        }
+        else
+        {
+            if (baseDown>baseUp)
+                shapeIlu.setImageResource(R.drawable.trapezium);
+            else
+                shapeIlu.setImageResource(R.drawable.trapezium2);
+        }
+        info.setText("A= " + baseDown + "   B= " + hight + "   C= " + baseUp);
 
     }
+
 
     public void initcomp()
     {
@@ -343,6 +396,7 @@ public class Test extends AppCompatActivity {
         b1=findViewById(R.id.option1);
         b2=findViewById(R.id.option2);
         b3=findViewById(R.id.option3);
+        shapeIlu=findViewById(R.id.imageView4);
 
     }
 }

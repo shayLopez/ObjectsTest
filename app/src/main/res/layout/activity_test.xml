@@ -5,7 +5,9 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Test">
+    tools:context=".Test"
+
+    >
 
     <TextView
         android:id="@+id/infoOfShape"
@@ -15,23 +17,23 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.303" />
+        app:layout_constraintVertical_bias="0.645" />
 
     <Button
-        android:id="@+id/option1"
+        android:id="@+id/option2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.545" />
+        app:layout_constraintVertical_bias="0.774" />
 
     <Button
         android:id="@+id/option3"
@@ -41,23 +43,23 @@
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.958"
+        app:layout_constraintHorizontal_bias="0.93"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.545" />
+        app:layout_constraintVertical_bias="0.774" />
 
     <Button
-        android:id="@+id/option2"
+        android:id="@+id/option1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.546"
-        android:textSize="25sp"/>
+        app:layout_constraintVertical_bias="0.774" />
 
     <TextView
         android:id="@+id/Shape"
@@ -71,5 +73,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.119" />
+
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="350dp"
+        android:layout_height="287dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.299"
+        app:srcCompat="@drawable/circle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
