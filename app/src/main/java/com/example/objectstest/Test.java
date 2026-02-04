@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,14 +14,19 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
+
 public class Test extends AppCompatActivity {
-    int shape, turncounter, rightcounter, wrongcounter, ranB;
+    ArrayList<Question> alQuestions=new ArrayList<>();
+    int  shape ,turncounter, rightcounter, wrongcounter, ranB;
+    IntakeInfo infoIntake;
     boolean diameter;
-    Intent recieve;
+    Intent recieve,finish;
     TextView info,Tvshape;
-    Button b1, b2, b3;
+    Button b1, b2, b3,fB;
     String rightAns = "";
     ImageView shapeIlu;
+    Question q;
 
 
     @Override
@@ -76,10 +82,25 @@ public class Test extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                q=new Question();
                 if (b1.getText().toString().equals(rightAns))
+                {
+                    //questions.set(rightcounter+wrongcounter,"right");
                     rightcounter++;
-                else
+                    q.setRight(true);
+                }else {
+                    //questions.set(rightcounter+wrongcounter,)
                     wrongcounter++;
+                    q.setRight(false);
+
+                }
+                q.setYourAnswer(Integer.valueOf(b1.getText().toString()));
+                q.setRightAnswer(Integer.valueOf(rightAns));
+
+                q.setText(info.getText().toString());
+
+                alQuestions.add(q);
+
                 if (shape == 1)
                     firstOpt();
                 else if (shape==2)
@@ -95,11 +116,23 @@ public class Test extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                q=new Question();
                 if (b2.getText().toString().equals(rightAns))
+                {
                     rightcounter++;
+                    q.setRight(true);}
                 else
+                {
                     wrongcounter++;
+                q.setRight(false);
+                }
                 //if (wrongcounter+rightcounter==10)
+                q.setYourAnswer(Integer.valueOf(b1.getText().toString()));
+                q.setRightAnswer(Integer.valueOf(rightAns));
+
+                q.setText(info.getText().toString());
+
+                alQuestions.add(q);
                 if (shape == 1)
                     firstOpt();
                 else if (shape==2)
@@ -113,12 +146,24 @@ public class Test extends AppCompatActivity {
         b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                q=new Question();
                 if (b3.getText().toString().equals(rightAns))
+                {
+                    q.setRight(true);
                     rightcounter++;
+                }
                 else
+                {
+                    q.setRight(false);
                     wrongcounter++;
+                }
                 //if (wrongcounter+rightcounter==10)
+                q.setYourAnswer(Integer.valueOf(b1.getText().toString()));
+                q.setRightAnswer(Integer.valueOf(rightAns));
 
+                q.setText(info.getText().toString());
+                Toast.makeText(getApplicationContext(), q.toString(), Toast.LENGTH_SHORT).show();
+                alQuestions.add(q);
                 if (shape == 1)
                     firstOpt();
                 else if (shape==2)
@@ -130,8 +175,14 @@ public class Test extends AppCompatActivity {
             }
         });
 
+ fB.setOnClickListener(new View.OnClickListener() {
+     @Override
+     public void onClick(View v) {
 
+     }
+ });
     }
+
 
     public void firstOpt() {
         int base, hight, areaOrDiam, fakeanswear1, fakeanswear2;
@@ -189,6 +240,7 @@ public class Test extends AppCompatActivity {
             info.setText("A= " + base + "  B= " + hight);
 
         }
+
 
     }
 
@@ -389,13 +441,16 @@ public class Test extends AppCompatActivity {
     public void initcomp()
     {
         recieve=getIntent();
-        diameter=recieve.getExtras().getBoolean("diam");
+        infoIntake= (IntakeInfo) recieve.getSerializableExtra("intakeInfo");
+        diameter=recieve.getExtras().getBoolean("intakeInfo");
         shape=recieve.getExtras().getInt("chosen");
         info=findViewById(R.id.infoOfShape);
         Tvshape=findViewById(R.id.Shape);
         b1=findViewById(R.id.option1);
         b2=findViewById(R.id.option2);
         b3=findViewById(R.id.option3);
+        fB=findViewById(R.id.button3);
+        finish=new Intent(Test.this,Display_Results.class);
         shapeIlu=findViewById(R.id.imageView4);
 
     }

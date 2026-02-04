@@ -22,6 +22,7 @@ public class Intake extends AppCompatActivity {
     Intent go;
     RadioGroup group;
     boolean diam=false;
+    IntakeInfo info;
 
 RadioButton B1,B2,B3,B4;
 
@@ -57,9 +58,9 @@ RadioButton B1,B2,B3,B4;
 
 
 
-
-go.putExtra("chosen",button);
-go.putExtra("diam",diam);
+info=new IntakeInfo(button,diam);
+go.putExtra("Intakeinfo",info);
+//go.putExtra("diam",diam);
 startActivity(go);
             }}
         });
