@@ -94,8 +94,8 @@ public class Test extends AppCompatActivity {
                     q.setRight(false);
 
                 }
-                q.setYourAnswer(Integer.valueOf(b1.getText().toString()));
-                q.setRightAnswer(Integer.valueOf(rightAns));
+                q.setYourAnswer(Double.valueOf(b1.getText().toString()));
+                q.setRightAnswer(Double.valueOf(rightAns));
 
                 q.setText(info.getText().toString());
 
@@ -127,8 +127,8 @@ public class Test extends AppCompatActivity {
                 q.setRight(false);
                 }
                 //if (wrongcounter+rightcounter==10)
-                q.setYourAnswer(Integer.valueOf(b1.getText().toString()));
-                q.setRightAnswer(Integer.valueOf(rightAns));
+                q.setYourAnswer(Double.valueOf(b2.getText().toString()));
+                q.setRightAnswer(Double.valueOf(rightAns));
 
                 q.setText(info.getText().toString());
 
@@ -158,8 +158,8 @@ public class Test extends AppCompatActivity {
                     wrongcounter++;
                 }
                 //if (wrongcounter+rightcounter==10)
-                q.setYourAnswer(Integer.valueOf(b1.getText().toString()));
-                q.setRightAnswer(Integer.valueOf(rightAns));
+                q.setYourAnswer(Double.valueOf(b3.getText().toString()));
+                q.setRightAnswer(Double.valueOf(rightAns));
 
                 q.setText(info.getText().toString());
                 Toast.makeText(getApplicationContext(), q.toString(), Toast.LENGTH_SHORT).show();
@@ -178,6 +178,8 @@ public class Test extends AppCompatActivity {
  fB.setOnClickListener(new View.OnClickListener() {
      @Override
      public void onClick(View v) {
+         finish.putExtra("list",alQuestions);
+         startActivity(finish);
 
      }
  });
@@ -187,7 +189,7 @@ public class Test extends AppCompatActivity {
     public void firstOpt() {
         int base, hight, areaOrDiam, fakeanswear1, fakeanswear2;
 
-        rightAns = "";
+
         base = (int) (Math.random() * 10) + 1;
         hight = (int) (Math.random() * 10) + 1;
         if (!diameter) {
@@ -246,7 +248,7 @@ public class Test extends AppCompatActivity {
 
     public void secOpt()
     {   int ranB;
-        String rightans="";
+
         double areaordiam;
         double base=(int)(Math.random() * 10) + 1;
         double hight=(int)(Math.random() * 10) + 1;
@@ -255,7 +257,7 @@ public class Test extends AppCompatActivity {
         {
 
             areaordiam=(hight*2+base);
-            rightans=String.valueOf(areaordiam);
+            rightAns=String.valueOf(areaordiam);
             fakeanswer1=(int)(Math.random() * 28) + 3;
             fakeasnwer2=(int) (Math.random() * 28) + 3;
             while (fakeanswer1==areaordiam)
@@ -267,7 +269,7 @@ public class Test extends AppCompatActivity {
         else
         {
             areaordiam=(hight*base)/2;
-            rightans = String.valueOf(areaordiam);
+            rightAns = String.valueOf(areaordiam);
             fakeanswer1=(int)(Math.random() * 50) + 1;
             fakeasnwer2=(int)(Math.random() * 50) + 1;
             while (fakeanswer1==areaordiam)
@@ -331,7 +333,7 @@ public class Test extends AppCompatActivity {
     public void thiOpt()
     {
         int ranB;
-        String rightAns="";
+
         double areaOrDiam;
         int radius=(int) (Math.random()*10)+1;
         double fakeAns1,fakeAns2;
@@ -356,6 +358,7 @@ public class Test extends AppCompatActivity {
             while (fakeAns2==areaOrDiam||fakeAns2==fakeAns1)
                 fakeAns2=(Math.pow((int)(Math.random()*10)+1,2))*3.14;
         }
+        rightAns=""+areaOrDiam;
         ranB=(int) (Math.random()*3);
         if (ranB==0)
         {
@@ -380,7 +383,7 @@ public class Test extends AppCompatActivity {
     }
     public void foOpt() {
         int ranB;
-        String rightAns = "";
+
         double baseDown = (int) (Math.random() * 10) + 1;
         double baseUp = (int) (Math.random() * 10) + 1;
         while (baseUp == baseDown)
@@ -405,6 +408,7 @@ public class Test extends AppCompatActivity {
                 fakeAns2 = ((((int) (Math.random() * 10) + 1) + ((int) (Math.random() * 9) + 1)) * ((int) (Math.random() * 10) + 1)) / 2;
             }
         }
+        rightAns=""+areaOrDiam;
         ranB = (int) (Math.random() * 3);
         if (ranB == 0) {
             b1.setText(String.valueOf(areaOrDiam));
@@ -441,9 +445,9 @@ public class Test extends AppCompatActivity {
     public void initcomp()
     {
         recieve=getIntent();
-        infoIntake= (IntakeInfo) recieve.getSerializableExtra("intakeInfo");
-        diameter=recieve.getExtras().getBoolean("intakeInfo");
-        shape=recieve.getExtras().getInt("chosen");
+        infoIntake= (IntakeInfo) recieve.getSerializableExtra("Intakeinfo");
+        diameter=infoIntake.getperimeter();
+        shape=infoIntake.getShape();
         info=findViewById(R.id.infoOfShape);
         Tvshape=findViewById(R.id.Shape);
         b1=findViewById(R.id.option1);

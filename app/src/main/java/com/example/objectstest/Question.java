@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 public class Question implements Serializable {
     private String text;
-    private int yourAnswer;
-    private int rightAnswer;
+    private double yourAnswer;
+    private double rightAnswer;
     private boolean isRight;
 
     public Question(String text, int yourAnswer, int rightAnswer, boolean isRight) {
@@ -26,19 +26,19 @@ public class Question implements Serializable {
         this.text = text;
     }
 
-    public int getYourAnswer() {
+    public double getYourAnswer() {
         return yourAnswer;
     }
 
-    public void setYourAnswer(int yourAnswer) {
+    public void setYourAnswer(double yourAnswer) {
         this.yourAnswer = yourAnswer;
     }
 
-    public int getRightAnswer() {
+    public double getRightAnswer() {
         return rightAnswer;
     }
 
-    public void setRightAnswer(int rightAnswer) {
+    public void setRightAnswer(double rightAnswer) {
         this.rightAnswer = rightAnswer;
     }
 
@@ -52,11 +52,10 @@ public class Question implements Serializable {
 
     @Override
     public String toString() {
-        return "Question{" +
-                "text='" + text + '\'' +
-                ", yourAnswer=" + yourAnswer +
-                ", rightAnswer=" + rightAnswer +
-                ", isRight=" + isRight +
-                '}';
+        return
+                "Question='" + text + '\n' +
+                " yourAnswer=" + yourAnswer +
+                "\n rightAnswer=" + rightAnswer +
+                " \nisRight=" + isRight ;
     }
 }
