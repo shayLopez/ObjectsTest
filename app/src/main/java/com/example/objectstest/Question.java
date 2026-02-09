@@ -53,9 +53,9 @@ public class Question implements Serializable {
     @Override
     public String toString() {
         return
-                "Question='" + text + '\n' +
-                " yourAnswer=" + yourAnswer +
-                "\n rightAnswer=" + rightAnswer +
-                " \nisRight=" + isRight ;
+                "Question: " + text + '\n' +
+                " your Answer: " + yourAnswer +
+                "\n right Answer: " + rightAnswer ;
+                        //+ " \nisRight=" + isRight ;
     }
 }

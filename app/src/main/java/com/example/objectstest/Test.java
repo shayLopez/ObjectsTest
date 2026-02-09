@@ -18,7 +18,8 @@ import java.util.ArrayList;
 
 public class Test extends AppCompatActivity {
     ArrayList<Question> alQuestions=new ArrayList<>();
-    int  shape ,turncounter, rightcounter, wrongcounter, ranB;
+    int  shape ,turncounter,  ranB;
+    double rightcounter, wrongcounter;
     IntakeInfo infoIntake;
     boolean diameter;
     Intent recieve,finish;
@@ -162,7 +163,7 @@ public class Test extends AppCompatActivity {
                 q.setRightAnswer(Double.valueOf(rightAns));
 
                 q.setText(info.getText().toString());
-                Toast.makeText(getApplicationContext(), q.toString(), Toast.LENGTH_SHORT).show();
+
                 alQuestions.add(q);
                 if (shape == 1)
                     firstOpt();
@@ -179,6 +180,8 @@ public class Test extends AppCompatActivity {
      @Override
      public void onClick(View v) {
          finish.putExtra("list",alQuestions);
+         finish.putExtra("rightcount",rightcounter);
+         finish.putExtra("wrongcount",wrongcounter);
          startActivity(finish);
 
      }
