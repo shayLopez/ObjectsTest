@@ -11,7 +11,7 @@
         android:id="@+id/textView"
         android:layout_width="269dp"
         android:layout_height="98dp"
-        android:text="fill options"
+        android:text="Fill Options"
         android:textSize="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +43,7 @@
             android:id="@+id/radioButton2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="triangular" />
+            android:text="triangle" />
 
         <RadioButton
             android:id="@+id/radioButton3"
@@ -89,7 +89,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Diameter"
+        android:text="Perimeter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.632"

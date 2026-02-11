@@ -4,11 +4,11 @@ import java.io.Serializable;
 
 public class Question implements Serializable {
     private String text;
-    private double yourAnswer;
-    private double rightAnswer;
+    private String yourAnswer;
+    private String rightAnswer;
     private boolean isRight;
 
-    public Question(String text, int yourAnswer, int rightAnswer, boolean isRight) {
+    public Question(String text,String yourAnswer, String rightAnswer, boolean isRight) {
         this.text = text;
         this.yourAnswer = yourAnswer;
         this.rightAnswer = rightAnswer;
@@ -26,19 +26,19 @@ public class Question implements Serializable {
         this.text = text;
     }
 
-    public double getYourAnswer() {
+    public String getYourAnswer() {
         return yourAnswer;
     }
 
-    public void setYourAnswer(double yourAnswer) {
+    public void setYourAnswer(String yourAnswer) {
         this.yourAnswer = yourAnswer;
     }
 
-    public double getRightAnswer() {
+    public String getRightAnswer() {
         return rightAnswer;
     }
 
-    public void setRightAnswer(double rightAnswer) {
+    public void setRightAnswer(String rightAnswer) {
         this.rightAnswer = rightAnswer;
     }
 
@@ -52,10 +52,14 @@ public class Question implements Serializable {
 
     @Override
     public String toString() {
-        return
-                "Question: " + text + '\n' +
+        String st= "Question: " + text + '\n' +
                 " your Answer: " + yourAnswer +
-                "\n right Answer: " + rightAnswer ;
+                "\n right Answer: " + rightAnswer+"\n" ;
+        if(this.isRight)
+            st+="CORRECT \n";
+        else
+            st+="INCORRECT \n";
+        return st;
                         //+ " \nisRight=" + isRight ;
     }
 }

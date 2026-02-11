@@ -95,8 +95,8 @@ public class Test extends AppCompatActivity {
                     q.setRight(false);
 
                 }
-                q.setYourAnswer(Double.valueOf(b1.getText().toString()));
-                q.setRightAnswer(Double.valueOf(rightAns));
+                q.setYourAnswer(String.valueOf(b1.getText().toString()));
+                q.setRightAnswer(String.valueOf(rightAns));
 
                 q.setText(info.getText().toString());
 
@@ -128,8 +128,8 @@ public class Test extends AppCompatActivity {
                 q.setRight(false);
                 }
                 //if (wrongcounter+rightcounter==10)
-                q.setYourAnswer(Double.valueOf(b2.getText().toString()));
-                q.setRightAnswer(Double.valueOf(rightAns));
+                q.setYourAnswer(String.valueOf(b2.getText().toString()));
+                q.setRightAnswer(String.valueOf(rightAns));
 
                 q.setText(info.getText().toString());
 
@@ -159,8 +159,8 @@ public class Test extends AppCompatActivity {
                     wrongcounter++;
                 }
                 //if (wrongcounter+rightcounter==10)
-                q.setYourAnswer(Double.valueOf(b3.getText().toString()));
-                q.setRightAnswer(Double.valueOf(rightAns));
+                q.setYourAnswer(String.valueOf(b3.getText().toString()));
+                q.setRightAnswer(String.valueOf(rightAns));
 
                 q.setText(info.getText().toString());
 
@@ -342,44 +342,44 @@ public class Test extends AppCompatActivity {
         double fakeAns1,fakeAns2;
         if (diameter)
         {
-            areaOrDiam=Math.round((2*radius*3.14)*100.0)/100.0;
-            fakeAns1=Math.round((((int)(Math.random()*20)+1)*3.14)*100.0)/100.0;
-            fakeAns2=Math.round((((int)(Math.random()*20)+1)*3.14)*100.0)/100.0;
+            areaOrDiam=(2*radius);
+            fakeAns1=((int)(Math.random()*20)+1);
+            fakeAns2=(int)(Math.random()*20)+1;
             while (fakeAns1==areaOrDiam)
-                fakeAns1=Math.round((((int)(Math.random()*20)+1)*3.14)*100.0)/100.0;
+                fakeAns1=((int)(Math.random()*20)+1);
             while (fakeAns2==fakeAns1||fakeAns2==areaOrDiam)
-                fakeAns2=Math.round((((int)(Math.random()*20)+1)*3.14)*100.0)/100.0;
+                fakeAns2=((int)(Math.random()*20)+1);
 
         }
         else
         {
-            areaOrDiam=(radius*radius)*3.14;
-            fakeAns1=(Math.pow((int)(Math.random()*10)+1,2))*3.14;
-            fakeAns2=(Math.pow((int)(Math.random()*10)+1,2))*3.14;
+            areaOrDiam=(radius*radius);
+            fakeAns1=(Math.pow((int)(Math.random()*10)+1,2));
+            fakeAns2=(Math.pow((int)(Math.random()*10)+1,2));
             while (fakeAns1==areaOrDiam)
-                fakeAns1=(Math.pow((int)(Math.random()*10)+1,2))*3.14;
+                fakeAns1=(Math.pow((int)(Math.random()*10)+1,2));
             while (fakeAns2==areaOrDiam||fakeAns2==fakeAns1)
-                fakeAns2=(Math.pow((int)(Math.random()*10)+1,2))*3.14;
+                fakeAns2=(Math.pow((int)(Math.random()*10)+1,2));
         }
-        rightAns=""+areaOrDiam;
+        rightAns="π"+areaOrDiam;  // <-- ADD "π" HERE
         ranB=(int) (Math.random()*3);
         if (ranB==0)
         {
-            b1.setText(String.valueOf(areaOrDiam));
-            b2.setText(String.valueOf(fakeAns1));
-            b3.setText(String.valueOf(fakeAns2));
+            b1.setText(String.valueOf("π"+areaOrDiam));
+            b2.setText(String.valueOf("π"+fakeAns1));
+            b3.setText(String.valueOf("π"+fakeAns2));
         }
         else if (ranB==1)
         {
-            b1.setText(String.valueOf(fakeAns1));
-            b2.setText(String.valueOf(areaOrDiam));
-            b3.setText(String.valueOf(fakeAns2));
+            b1.setText(String.valueOf("π"+fakeAns1));
+            b2.setText(String.valueOf("π"+areaOrDiam));
+            b3.setText(String.valueOf("π"+fakeAns2));
         }
         else if (ranB==2)
         {
-            b1.setText(String.valueOf(fakeAns1));
-            b2.setText(String.valueOf(fakeAns2));
-            b3.setText(String.valueOf(areaOrDiam));
+            b1.setText(String.valueOf("π"+fakeAns1));
+            b2.setText(String.valueOf("π"+fakeAns2));
+            b3.setText(String.valueOf("π"+areaOrDiam));
         }
         info.setText("R = "+radius);
         shapeIlu.setImageResource(R.drawable.circle);
