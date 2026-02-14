@@ -9,7 +9,7 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="269dp"
+        android:layout_width="300dp"
         android:layout_height="98dp"
         android:text="Fill Options"
         android:textSize="50sp"
@@ -18,7 +18,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.119"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:fontFamily="@font/playwritenzbasicvavriablefontwght"/>
 
     <RadioGroup
         android:id="@+id/group"
@@ -37,25 +38,29 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="square"
+            android:fontFamily="@font/playwritenzbasicvavriablefontwght"
             />
 
         <RadioButton
             android:id="@+id/radioButton2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="triangle" />
+            android:text="triangle"
+            android:fontFamily="@font/playwritenzbasicvavriablefontwght"/>
 
         <RadioButton
             android:id="@+id/radioButton3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="circle" />
+            android:text="circle"
+            android:fontFamily="@font/playwritenzbasicvavriablefontwght"/>
 
         <RadioButton
             android:id="@+id/radioButton4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="trapezium" />
+            android:text="trapezium"
+            android:fontFamily="@font/playwritenzbasicvavriablefontwght"/>
     </RadioGroup>
 
     <Switch
@@ -69,6 +74,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.383"
+        android:fontFamily="@font/playwritenzbasicvavriablefontwght"
         />
 
     <Button
@@ -83,17 +89,19 @@
         app:layout_constraintHorizontal_bias="0.437"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.912" />
+        app:layout_constraintVertical_bias="0.912"
+        android:fontFamily="@font/playwritenzbasicvavriablefontwght"/>
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/playwritenzbasicvavriablefontwght"
         android:text="Perimeter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.632"
+        app:layout_constraintHorizontal_bias="0.674"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.389" />
+        app:layout_constraintVertical_bias="0.385" />
 </androidx.constraintlayout.widget.ConstraintLayout>

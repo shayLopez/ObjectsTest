@@ -17,7 +17,8 @@
         app:layout_constraintHorizontal_bias="0.446"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.091" />
+        app:layout_constraintVertical_bias="0.091"
+        android:fontFamily="@font/playwritenzbasicvavriablefontwght"/>
 
     <ImageView
         android:id="@+id/imageView"
@@ -44,7 +45,8 @@
         app:layout_constraintHorizontal_bias="0.44"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.738" />
+        app:layout_constraintVertical_bias="0.738"
+        android:fontFamily="@font/playwritenzbasicvavriablefontwght"/>
 
     <ImageView
         android:id="@+id/rotateIv"

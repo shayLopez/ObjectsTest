@@ -190,6 +190,9 @@ public class Test extends AppCompatActivity {
 
 
     public void firstOpt() {
+        b1.setTextSize(25);
+        b2.setTextSize(25);
+        b3.setTextSize(25);
         int base, hight, areaOrDiam, fakeanswear1, fakeanswear2;
 
 
@@ -251,7 +254,9 @@ public class Test extends AppCompatActivity {
 
     public void secOpt()
     {   int ranB;
-
+        b1.setTextSize(25);
+        b2.setTextSize(25);
+        b3.setTextSize(25);
         double areaordiam;
         double base=(int)(Math.random() * 10) + 1;
         double hight=(int)(Math.random() * 10) + 1;
@@ -335,6 +340,9 @@ public class Test extends AppCompatActivity {
     }
     public void thiOpt()
     {
+        b1.setTextSize(20);
+        b2.setTextSize(20);
+        b3.setTextSize(20);
         int ranB;
 
         double areaOrDiam;
@@ -361,32 +369,34 @@ public class Test extends AppCompatActivity {
             while (fakeAns2==areaOrDiam||fakeAns2==fakeAns1)
                 fakeAns2=(Math.pow((int)(Math.random()*10)+1,2));
         }
-        rightAns="π"+areaOrDiam;  // <-- ADD "π" HERE
+        rightAns="π("+areaOrDiam+"";  // <-- ADD "π" HERE
         ranB=(int) (Math.random()*3);
         if (ranB==0)
         {
-            b1.setText(String.valueOf("π"+areaOrDiam));
-            b2.setText(String.valueOf("π"+fakeAns1));
-            b3.setText(String.valueOf("π"+fakeAns2));
+            b1.setText(String.valueOf("π("+areaOrDiam+""));
+            b2.setText(String.valueOf("π("+fakeAns1+""));
+            b3.setText(String.valueOf("π("+fakeAns2+""));
         }
         else if (ranB==1)
         {
-            b1.setText(String.valueOf("π"+fakeAns1));
-            b2.setText(String.valueOf("π"+areaOrDiam));
-            b3.setText(String.valueOf("π"+fakeAns2));
+            b1.setText(String.valueOf("π("+fakeAns1+""));
+            b2.setText(String.valueOf("π("+areaOrDiam+""));
+            b3.setText(String.valueOf("π("+fakeAns2+""));
         }
         else if (ranB==2)
         {
-            b1.setText(String.valueOf("π"+fakeAns1));
-            b2.setText(String.valueOf("π"+fakeAns2));
-            b3.setText(String.valueOf("π"+areaOrDiam));
+            b1.setText(String.valueOf("π("+fakeAns1+""));
+            b2.setText(String.valueOf("π("+fakeAns2+ ""));
+            b3.setText(String.valueOf("π("+areaOrDiam+""));
         }
         info.setText("R = "+radius);
         shapeIlu.setImageResource(R.drawable.circle);
     }
     public void foOpt() {
         int ranB;
-
+        b1.setTextSize(25);
+        b2.setTextSize(25);
+        b3.setTextSize(25);
         double baseDown = (int) (Math.random() * 10) + 1;
         double baseUp = (int) (Math.random() * 10) + 1;
         while (baseUp == baseDown)

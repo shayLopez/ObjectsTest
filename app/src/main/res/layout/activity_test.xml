@@ -20,7 +20,8 @@
         app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.645" />
+        app:layout_constraintVertical_bias="0.645"
+        android:fontFamily="@font/playwritenzbasicvavriablefontwght"/>
 
     <Button
         android:id="@+id/option2"
@@ -34,7 +35,10 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.774" />
+        app:layout_constraintVertical_bias="0.774"
+        android:paddingHorizontal="10dp"
+
+        android:fontFamily="@font/playwritenzbasicvavriablefontwght"/>
 
     <Button
         android:id="@+id/option3"
@@ -48,7 +52,9 @@
         app:layout_constraintHorizontal_bias="0.93"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.774" />
+        app:layout_constraintVertical_bias="0.774"
+        android:paddingHorizontal="10dp"
+        android:fontFamily="@font/playwritenzbasicvavriablefontwght"/>
 
     <Button
         android:id="@+id/option1"
@@ -62,7 +68,9 @@
         app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.774" />
+        app:layout_constraintVertical_bias="0.774"
+        android:paddingHorizontal="10dp"
+        android:fontFamily="@font/playwritenzbasicvavriablefontwght"/>
 
     <TextView
         android:id="@+id/Shape"
@@ -75,7 +83,8 @@
         app:layout_constraintHorizontal_bias="0.53"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.119" />
+        app:layout_constraintVertical_bias="0.119"
+        android:fontFamily="@font/playwritenzbasicvavriablefontwght"/>
 
 
     <ImageView
@@ -101,6 +110,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.912" />
+        app:layout_constraintVertical_bias="0.912"
+        android:fontFamily="@font/playwritenzbasicvavriablefontwght"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

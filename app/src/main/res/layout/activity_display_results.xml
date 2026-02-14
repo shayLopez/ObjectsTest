@@ -19,7 +19,8 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.067" />
+        app:layout_constraintVertical_bias="0.067"
+        android:fontFamily="@font/playwritenzbasicvavriablefontwght"/>
 
     <ListView
         android:id="@+id/lvQuestions"
@@ -31,12 +32,15 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.359" />
+        app:layout_constraintVertical_bias="0.359"
+        />
 
     <TextView
         android:id="@+id/resultsTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/playwritenzbasicvavriablefontwght"
+        android:gravity="center"
         android:text="TextView"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -44,6 +48,5 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.779"
-        android:gravity="center"/>
+        app:layout_constraintVertical_bias="0.802" />
 </androidx.constraintlayout.widget.ConstraintLayout>

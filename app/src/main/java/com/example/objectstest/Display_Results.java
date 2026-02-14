@@ -37,7 +37,7 @@ public class Display_Results extends AppCompatActivity {
                         questions);
 
         listview.setAdapter(adapter);
-        tVresults.setText("Right: "+rightcounter+"        wrong: "+wrongcounter+"\n\n    Score: "+Math.round((rightcounter/(rightcounter+wrongcounter))*10000)/100+"%");
+        tVresults.setText("Right: "+rightcounter+"\nwrong: "+wrongcounter+"\n\nScore: "+Math.round((rightcounter/(rightcounter+wrongcounter))*10000)/100+"%");
     }
     public void inticomp()
     {
