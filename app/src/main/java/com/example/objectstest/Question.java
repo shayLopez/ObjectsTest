@@ -8,6 +8,7 @@ public class Question implements Serializable {
     private String rightAnswer;
     private boolean isRight;
 
+
     public Question(String text,String yourAnswer, String rightAnswer, boolean isRight) {
         this.text = text;
         this.yourAnswer = yourAnswer;
