@@ -29,12 +29,19 @@ public class QuestionAdapter extends ArrayAdapter<Question> {
         }
 
         // 3. מוצאים את המקום לכתוב בו
-        TextView tvName = convertView.findViewById(R.id.question);
-        ImageView imgHero = convertView.findViewById(R.id.imageView3);
+        TextView question = convertView.findViewById(R.id.question);
+        TextView yAnswear= convertView.findViewById(R.id.yanswear);
+        TextView rAnswear= convertView.findViewById(R.id.ranswear);
+        ImageView img = convertView.findViewById(R.id.imageView3);
 
         // 4. מוחקים וכותבים חדש (setText)
-        //tvName.setText(.getName());
-        //imgHero.setImageResource(hero.getImageId());
+        question.setText("Question: "+q.getText());
+        yAnswear.setText("You answer: "+q.getYourAnswer());
+        rAnswear.setText("Right answer: "+q.getRightAnswer());
+        if (q.isRight())
+        img.setImageResource(R.drawable.right);
+        else
+            img.setImageResource(R.drawable.wrong);
 
         // 5. מגישים את הלוח המוכן
         return convertView;

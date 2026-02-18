@@ -26,6 +26,7 @@ public class Display_Results extends AppCompatActivity {
         listview = findViewById(R.id.lvQuestions);
         ArrayList<Question> questions =
                 (ArrayList<Question>) getIntent().getSerializableExtra("list");
+        QuestionAdapter myAdapter = new QuestionAdapter(this, questions);
 
         if (questions == null) {
             questions = new ArrayList<>();
@@ -36,7 +37,7 @@ public class Display_Results extends AppCompatActivity {
                         android.R.layout.simple_list_item_1,
                         questions);
 
-        listview.setAdapter(adapter);
+        listview.setAdapter(myAdapter);
         tVresults.setText("Right: "+rightcounter+"\nwrong: "+wrongcounter+"\n\nScore: "+Math.round((rightcounter/(rightcounter+wrongcounter))*10000)/100+"%");
     }
     public void inticomp()
